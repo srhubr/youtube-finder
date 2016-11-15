@@ -1,0 +1,26 @@
+.video-title {
+  height: 30px;
+}
+
+.thumb {
+  width: 360px;
+  height: 190px;
+}
+
+.nav-row {
+  margin-bottom: 30px;
+}
+
+.livepage-nav {
+  padding-left: 335px;
+}
+
+.livepage-title {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .livepage-nav {
+    padding-left: 0px;
+  }
+}
