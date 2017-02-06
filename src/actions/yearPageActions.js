@@ -1,5 +1,5 @@
-export const VIDEO_REQUEST_STARTED = 'VIDEO_REQUEST_STARTED';
-export const VIDEO_REQUEST_FINISHED = 'VIDEO_REQUEST_FINISHED';
+export const VIDEO_REQUEST_STARTED = 'VIDEO_REQUEST_STARTED',
+             VIDEO_REQUEST_FINISHED = 'VIDEO_REQUEST_FINISHED';
 
 function videoRequestStarted(year) {
   return { type: VIDEO_REQUEST_STARTED, year };
@@ -10,9 +10,9 @@ function videoRequestFinished(videoID, titles, publishDates) {
 }
 
 export function getVideos(year) {
-  let videoID = [],
-      titles = [],
-      publishDates = [];
+  const videoID = [],
+        titles = [],
+        publishDates = [];
 
   return (dispatch) => {
     dispatch(videoRequestStarted(year));
@@ -30,7 +30,7 @@ export function getVideos(year) {
     fetch(endpoint)
       .then(response => response.json())
       .then(data => {
-        data.items.forEach(function(item, index, arr) {
+        data.items.forEach(item => {
           videoID.push(item.id.videoId);
           titles.push(item.snippet.title);
           publishDates.push(item.snippet.publishedAt.slice(0, 10));

@@ -11,26 +11,26 @@ const App = (props) =>
 
       <Navbar.Header>
         <Navbar.Brand>
-          <Link to='/'>Youtube Finder</Link>
+          <Link to="/">Youtube Finder</Link>
         </Navbar.Brand>
         <Navbar.Toggle />
       </Navbar.Header>
 
       <Navbar.Collapse>
         <Nav navbar>
-          <LinkContainer to='/year'>
+          <LinkContainer to="/year">
             <NavItem>Top videos of the year</NavItem>
           </LinkContainer>
-          <LinkContainer to='/location'>
+          <LinkContainer to="/location">
             <NavItem>Search by location</NavItem>
           </LinkContainer>
-          <LinkContainer to='/live'>
+          <LinkContainer to="/live">
             <NavItem>Most viewed Broadcasts</NavItem>
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>
 
-    </Navbar>    
+    </Navbar>
     {props.children}
   </div>
 

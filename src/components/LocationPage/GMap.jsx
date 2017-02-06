@@ -3,10 +3,6 @@ import { setLatitude } from '../../actions/locationPageActions';
 import { setLongitude } from '../../actions/locationPageActions';
 
 class GMap extends Component {
-  shouldComponentUpdate() {
-    return false;
-  }
-
   componentWillReceiveProps(nextProps) {
     this.marker.setMap(null);
     this.marker.setPosition({ lat: nextProps.lat, lng: nextProps.lng });
@@ -15,7 +11,7 @@ class GMap extends Component {
   }
 
   componentDidMount() {
-    const dispatch = this.props.dispatch;
+    const { dispatch } = this.props;
 
     this.map = new google.maps.Map(this.refs.map, { // eslint-disable-line
       center: { lat: this.props.lat, lng: this.props.lng },
@@ -28,8 +24,8 @@ class GMap extends Component {
     });
 
     this.map.addListener('click', (e) => {
-      let lat = e.latLng.lat();
-      let lng = e.latLng.lng();
+      const lat = e.latLng.lat();
+      const lng = e.latLng.lng();
 
       dispatch(setLatitude(lat));
       dispatch(setLongitude(lng));

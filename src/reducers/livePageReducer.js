@@ -14,7 +14,7 @@ const initialState = {
 export default function (state = initialState, action) {
   switch(action.type) {
     case VIDEO_REQUEST_STARTED2:
-      return Object.assign({}, state, { eventType: action.eventType, videoCategoryId: action.videoCategoryId });
+      return Object.assign({}, state, { videoCategoryId: action.videoCategoryId });
     case VIDEO_REQUEST_FINISHED2:
       return Object.assign({}, state, { videoID2: action.videoID2, titles2: action.titles2, thumbnails1: action.thumbnails1 });
     case CHANGE_ACTIVE_NAV_KEY:

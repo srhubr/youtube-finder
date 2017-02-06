@@ -7,10 +7,10 @@ import LocationPage from './components/LocationPage';
 import LivePage from './components/LivePage';
 
 export default (
-  <Route path='/' component={App}>
+  <Route path="/" component={App}>
     <IndexRoute component={WelcomePage} />
-    <Route path='year' component={YearPage} />
-    <Route path='location' component={LocationPage} />
-    <Route path='live' component={LivePage} />
+    <Route path="year" component={YearPage} />
+    <Route path="location" component={LocationPage} />
+    <Route path="live" component={LivePage} />
   </Route>
 );

@@ -61,14 +61,12 @@ class SearhForm extends Component {
   }
 
   onBtnClick() {
-    let lat = +this.state.latitude;
-    let lng = +this.state.longitude;
-    let rad = this.state.radiusValue;
-
-    let timeAfter = `${this.state.yearAfterValue}-${this.state.monthAfterValue}-${this.state.dayAfterValue}T00:00:00Z`;
-    let timeBefore = `${this.state.yearBeforeValue}-${this.state.monthBeforeValue}-${this.state.dayBeforeValue}T00:00:00Z`;
-
-    let order = this.state.orderValue;
+    const lat = +this.state.latitude,
+          lng = +this.state.longitude,
+          rad = this.state.radiusValue,
+          order = this.state.orderValue,
+          timeAfter = `${this.state.yearAfterValue}-${this.state.monthAfterValue}-${this.state.dayAfterValue}T00:00:00Z`,
+          timeBefore = `${this.state.yearBeforeValue}-${this.state.monthBeforeValue}-${this.state.dayBeforeValue}T00:00:00Z`;
 
     this.props.dispatch(getVideos1(lat, lng, rad, timeAfter, timeBefore, order));
   }
@@ -138,9 +136,9 @@ class SearhForm extends Component {
           </Col>
         </FormGroup>
 
-        <FormGroup controlId='radius-field'>
+        <FormGroup controlId="radius-field">
           <Col sm={2}>
-            <ControlLabel htmlFor='radius-field' className='centred-label'>
+            <ControlLabel htmlFor="radius-field" className="centred-label">
               Search Radius
             </ControlLabel>
           </Col>
@@ -166,11 +164,11 @@ class SearhForm extends Component {
         </FormGroup>
 
         <FormGroup>
-          <Col componentClass={ControlLabel} className='centred-label' sm={2}>
+          <Col componentClass={ControlLabel} className="centred-label" sm={2}>
             Publiched After
           </Col>
 
-          <Col sm={2} className='day-select'>
+          <Col sm={2} className="day-select">
             <Select
               name="dayAfterSelect"
               value={this.state.dayAfterValue}
@@ -181,7 +179,7 @@ class SearhForm extends Component {
             />
           </Col>
 
-          <Col sm={4} className='month-select'>
+          <Col sm={4} className="month-select">
             <Select
               name="monthAfterSelect"
               value={this.state.monthAfterValue}
@@ -192,7 +190,7 @@ class SearhForm extends Component {
             />
           </Col>
 
-          <Col sm={3} className='year-select'>
+          <Col sm={3} className="year-select">
             <Select
               name="yearAfterSelect"
               value={this.state.yearAfterValue}
@@ -206,11 +204,11 @@ class SearhForm extends Component {
         </FormGroup>
 
         <FormGroup>
-          <Col componentClass={ControlLabel} className='centred-label' sm={2}>
+          <Col componentClass={ControlLabel} className="centred-label" sm={2}>
             Publiched Before
           </Col>
 
-          <Col sm={2} className='day-select'>
+          <Col sm={2} className="day-select">
             <Select
               name="dayBeforeSelect"
               value={this.state.dayBeforeValue}
@@ -221,7 +219,7 @@ class SearhForm extends Component {
             />
           </Col>
 
-          <Col sm={4} className='month-select'>
+          <Col sm={4} className="month-select">
             <Select
               name="monthBeforeSelect"
               value={this.state.monthBeforeValue}
@@ -232,7 +230,7 @@ class SearhForm extends Component {
             />
           </Col>
 
-          <Col sm={3} className='year-select'>
+          <Col sm={3} className="year-select">
             <Select
               name="yearBeforeSelect"
               value={this.state.yearBeforeValue}
@@ -246,11 +244,11 @@ class SearhForm extends Component {
         </FormGroup>
 
         <FormGroup>
-          <Col componentClass={ControlLabel} className='centred-label' sm={2}>
+          <Col componentClass={ControlLabel} className="centred-label" sm={2}>
             Order by
           </Col>
 
-          <Col sm={4} className='order-select'>
+          <Col sm={4} className="order-select">
             <Select
               name="orderSelect"
               value={this.state.orderValue}

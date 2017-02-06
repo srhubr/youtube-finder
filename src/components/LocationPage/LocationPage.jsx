@@ -8,17 +8,17 @@ import Row  from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 
 const LocationPage = (props) =>
-  <Grid className='location-page'>
-    <Row className='page-title'>
+  <Grid className="location-page">
+    <Row className="page-title">
       <h2>Search YouTube videos by filming location</h2>
     </Row>
-    <Row className='main-content'>
+    <Row className="main-content">
       <Col md={6}>
-        <div className='gmap'>
+        <div className="gmap">
           <GMap lat={props.lat} lng={props.lng} dispatch={props.dispatch} />
         </div>
       </Col>
-      <Col md={6} className='search-form'>
+      <Col md={6} className="search-form">
         <SearhForm lat={props.lat} lng={props.lng} dispatch={props.dispatch} />
       </Col>
     </Row>

@@ -18,50 +18,54 @@ class LivePage extends Component {
   }
 
   handleSelect(selectedKey) {
-    this.props.dispatch(changeActiveNavKey(selectedKey));
+    const { dispatch } = this.props;
+    
+    dispatch(changeActiveNavKey(selectedKey));
 
     switch (selectedKey) {
       case '1':
-        return this.props.dispatch(getVideos2('live'));
+        return dispatch(getVideos2('live'));
       case '2':
-        return this.props.dispatch(getVideos2('completed'));
+        return dispatch(getVideos2('completed'));
       case '3.1':
-        return this.props.dispatch(getVideos2('completed', 1));
+        return dispatch(getVideos2('completed', 1));
       case '3.2':
-        return this.props.dispatch(getVideos2('completed', 2));
+        return dispatch(getVideos2('completed', 2));
       case '3.3':
-        return this.props.dispatch(getVideos2('completed', 10));
+        return dispatch(getVideos2('completed', 10));
       case '3.4':
-        return this.props.dispatch(getVideos2('completed', 17));
+        return dispatch(getVideos2('completed', 17));
       case '3.5':
-        return this.props.dispatch(getVideos2('completed', 20));
+        return dispatch(getVideos2('completed', 20));
       case '3.6':
-        return this.props.dispatch(getVideos2('completed', 23));
+        return dispatch(getVideos2('completed', 23));
       case '3.7':
-        return this.props.dispatch(getVideos2('completed', 25));
+        return dispatch(getVideos2('completed', 25));
       case '3.8':
-        return this.props.dispatch(getVideos2('completed', 27));
+        return dispatch(getVideos2('completed', 27));
       case '3.9':
-        return this.props.dispatch(getVideos2('completed', 28));
+        return dispatch(getVideos2('completed', 28));
       case '3.10':
-        return this.props.dispatch(getVideos2('completed', 30));
+        return dispatch(getVideos2('completed', 30));
+      default:
+        return null;
     }
 
   }
 
   render() {
-    const { videoID2, titles2, thumbnails1, activeNavKey }= this.props;
+    const { videoID2, titles2, thumbnails1, activeNavKey } = this.props;
 
     return (
       <Grid className="live-page">
         <Row>
           <h2>Most viewed YouTube Broadcasts</h2>
         </Row>
-        <Row className='page-nav'>
+        <Row className="page-nav">
           <Nav bsStyle="tabs" activeKey={activeNavKey} onSelect={this.handleSelect}>
             <NavItem eventKey="1">Live Now</NavItem>
             <NavItem eventKey="2">Most viewed of all time</NavItem>
-            <NavDropdown eventKey="3" title="Most viewed by category">
+            <NavDropdown eventKey="3" title="Most viewed by category" id="nav-dropdown">
               <MenuItem eventKey="3.1">Film & Animation</MenuItem>
               <MenuItem eventKey="3.2">Autos & Vehicles</MenuItem>
               <MenuItem eventKey="3.3">Music</MenuItem>
