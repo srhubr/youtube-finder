@@ -1,7 +1,7 @@
 import React from 'react';
-import Row  from 'react-bootstrap/lib/Row';
+import Row from 'react-bootstrap/lib/Row';
 
-const VideoList = (props) =>
+const VideoList = props => (
   <Row className="videos-list">
     {props.videoID.map((item, index) =>
       <Row key={index} className="list-item">
@@ -13,5 +13,6 @@ const VideoList = (props) =>
       </Row>
     )}
   </Row>
+);
 
 export default VideoList;

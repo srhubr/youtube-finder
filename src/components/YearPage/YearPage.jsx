@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getVideos } from "../../actions/yearPageActions";
 import VideoList from "./VideoList";
-import Grid  from "react-bootstrap/lib/Grid";
-import Row  from "react-bootstrap/lib/Row";
-import ButtonToolbar from "react-bootstrap/lib/ButtonToolbar";
-import Button from "react-bootstrap/lib/Button";
+import {
+  Grid,
+  Row,
+  ButtonToolbar,
+  Button
+} from "react-bootstrap/lib";
 
 class YearPage extends Component {
   onYearBtnClick(selectedYear) {
@@ -43,7 +45,7 @@ class YearPage extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   const { videoID, titles, publishDates, year } = state.yearPage;
 
   return { videoID, titles, publishDates, year };

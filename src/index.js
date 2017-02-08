@@ -5,7 +5,6 @@ import Root from './Root';
 import configureStore from './configureStore';
 import { getVideos } from './actions/yearPageActions';
 import { getVideos2 } from './actions/livePageActions';
-
 import './css/bootstrap.css';
 import './css/main.css';
 

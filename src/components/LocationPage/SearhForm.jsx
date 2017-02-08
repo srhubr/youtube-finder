@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import Col from 'react-bootstrap/lib/Col';
-import Form from 'react-bootstrap/lib/Form';
-import FormGroup from 'react-bootstrap/lib/FormGroup';
-import FormControl from 'react-bootstrap/lib/FormControl';
-import InputGroup from 'react-bootstrap/lib/InputGroup';
-import DropdownButton from 'react-bootstrap/lib/DropdownButton';
-import MenuItem from 'react-bootstrap/lib/MenuItem';
-import ControlLabel from 'react-bootstrap/lib/ControlLabel';
-import Button from 'react-bootstrap/lib/Button';
 import Select from 'react-select';
 import { getVideos1 } from '../../actions/locationPageActions';
 import { YEARS } from './data/years';
 import { MONTHS } from './data/months';
 import { DAYS } from './data/days';
 import { ORDER } from './data/order';
+import {
+  Col,
+  Form,
+  FormGroup,
+  FormControl,
+  InputGroup,
+  DropdownButton,
+  MenuItem,
+  ControlLabel,
+  Button
+} from 'react-bootstrap/lib';
 
 import 'react-select/dist/react-select.css';
 
@@ -61,12 +63,12 @@ class SearhForm extends Component {
   }
 
   onBtnClick() {
-    const lat = +this.state.latitude,
-          lng = +this.state.longitude,
-          rad = this.state.radiusValue,
-          order = this.state.orderValue,
-          timeAfter = `${this.state.yearAfterValue}-${this.state.monthAfterValue}-${this.state.dayAfterValue}T00:00:00Z`,
-          timeBefore = `${this.state.yearBeforeValue}-${this.state.monthBeforeValue}-${this.state.dayBeforeValue}T00:00:00Z`;
+    const lat = Number(this.state.latitude);
+    const lng = Number(this.state.longitude);
+    const rad = this.state.radiusValue;
+    const order = this.state.orderValue;
+    const timeAfter = `${this.state.yearAfterValue}-${this.state.monthAfterValue}-${this.state.dayAfterValue}T00:00:00Z`;
+    const timeBefore = `${this.state.yearBeforeValue}-${this.state.monthBeforeValue}-${this.state.dayBeforeValue}T00:00:00Z`;
 
     this.props.dispatch(getVideos1(lat, lng, rad, timeAfter, timeBefore, order));
   }

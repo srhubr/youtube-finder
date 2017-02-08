@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 import LinkContainer from 'react-router-bootstrap/lib/LinkContainer';
-import Nav from 'react-bootstrap/lib/Nav';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import NavItem  from 'react-bootstrap/lib/NavItem';
+import { Nav, Navbar, NavItem } from 'react-bootstrap/lib';
 
-const App = (props) =>
+const App = props => (
   <div>
     <Navbar>
 
@@ -33,5 +31,6 @@ const App = (props) =>
     </Navbar>
     {props.children}
   </div>
+);
 
 export default App;

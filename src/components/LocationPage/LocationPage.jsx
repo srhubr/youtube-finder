@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import GMap from './GMap';
 import SearhForm from './SearhForm';
 import VideoList from './VideoList';
-import Grid  from 'react-bootstrap/lib/Grid';
-import Row  from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
+import { Grid, Row, Col } from 'react-bootstrap/lib';
 
-const LocationPage = (props) =>
+const LocationPage = props => (
   <Grid className="location-page">
     <Row className="page-title">
       <h2>Search YouTube videos by filming location</h2>
@@ -26,8 +24,9 @@ const LocationPage = (props) =>
       <VideoList videoID={props.videoID1} titles={props.titles1} thumbnails={props.thumbnails}></VideoList>
     </Row>
   </Grid>
+);
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   const { lat, lng, videoID1, titles1, thumbnails } = state.locationPage;
 
   return { lat, lng, videoID1, titles1, thumbnails };

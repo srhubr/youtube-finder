@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Grid from 'react-bootstrap/lib/Grid';
-import Row  from 'react-bootstrap/lib/Row';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem  from 'react-bootstrap/lib/NavItem';
-import NavDropdown  from 'react-bootstrap/lib/NavDropdown';
-import MenuItem  from 'react-bootstrap/lib/MenuItem';
-import { getVideos2 } from '../../actions/livePageActions';
-import { changeActiveNavKey } from '../../actions/livePageActions';
+import { getVideos2, changeActiveNavKey } from '../../actions/livePageActions';
 import VideoList from './VideoList';
+import {
+  Grid,
+  Row,
+  Nav,
+  NavItem,
+  NavDropdown,
+  MenuItem
+} from 'react-bootstrap/lib';
 
 class LivePage extends Component {
   constructor(props) {
@@ -18,8 +19,8 @@ class LivePage extends Component {
   }
 
   handleSelect(selectedKey) {
-    const { dispatch } = this.props;
-    
+    const dispatch = this.props.dispatch;
+
     dispatch(changeActiveNavKey(selectedKey));
 
     switch (selectedKey) {
@@ -47,10 +48,7 @@ class LivePage extends Component {
         return dispatch(getVideos2('completed', 28));
       case '3.10':
         return dispatch(getVideos2('completed', 30));
-      default:
-        return null;
     }
-
   }
 
   render() {
@@ -87,7 +85,7 @@ class LivePage extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   const { videoID2, titles2, thumbnails1, activeNavKey } = state.livePage;
 
   return { videoID2, titles2, thumbnails1, activeNavKey };
